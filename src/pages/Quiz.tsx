@@ -68,7 +68,7 @@ const Quiz: React.FC = () => {
           ) : (
             <div className="space-y-10">
               <div className="flex items-center justify-between">
-                <div className="mb-4 text-2xl text-gray-700 font-medium">
+                <div className="text-[16px] xl:text-2xl text-gray-700 font-medium">
                   <p>0:{timeLeft}</p>
                 </div>
                 <div>
@@ -91,7 +91,7 @@ const Quiz: React.FC = () => {
                 ))}
               </div>
 
-              <div className="font-medium text-gray-600 text-[22px] text-center">
+              <div className="font-medium text-gray-600 text-xs md:text-sm lg:text-[16px] xl:text-[22px] text-center">
                 Select the missing words in the correct order
               </div>
 

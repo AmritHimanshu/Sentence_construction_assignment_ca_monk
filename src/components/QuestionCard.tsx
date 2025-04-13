@@ -40,17 +40,17 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
 
   return (
     <div className="space-y-10">
-      <p className="text-[23px] leading-14">
+      <p className="text-xs md:text-sm lg:text-[16px] xl:text-[23px] leading-10 xl:leading-14">
         {parts.map((part, i) => (
           <React.Fragment key={i}>
             {part}
             {i < question.correctAnswer.length && (
               <span
                 onClick={() => handleUnselect(i)}
-                className="inline-block border-b-2 border-black min-w-[200px] text-center cursor-pointer mx-1"
+                className="inline-block border-b-2 border-black w-[100px] md:w-[130px] lg:w-[150px] xl:min-w-[200px] text-center cursor-pointer mx-1"
               >
                 {selectedWords[i] ? (
-                  <span className="px-3 py-1 text-[16px] border-[1px] border-gray-600 rounded-md">
+                  <span className="px-1 lg:px-3 py-1 text-xs md:text-sm lg:text-[14px] xl:text-[21px] border-[1px] border-gray-600 rounded-md">
                     {selectedWords[i]}
                   </span>
                 ) : (
@@ -68,7 +68,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
             key={i}
             onClick={() => handleSelectWord(word)}
             disabled={usedWords.includes(word)}
-            className={`px-4 py-2 border rounded-md font-medium text-gray-800 cursor-pointer ${
+            className={`px-4 py-2 text-xs md:text-sm lg:text-[16px] xl:text-[23px] border rounded-md font-medium text-gray-800 cursor-pointer ${
               usedWords.includes(word) ? "hidden" : "border-gray-500"
             }`}
           >
