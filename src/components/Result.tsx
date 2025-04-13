@@ -27,7 +27,7 @@ function Result({ questions, userAnswers }: ResultProps) {
 
   const getAnswerStatus = (
     correct: string[],
-    selected: string[] | null
+    selected: (string | null)[] | null
   ): "Correct" | "Incorrect" | "Not Answered" => {
     if (!Array.isArray(selected)) return "Not Answered";
     return JSON.stringify(correct) === JSON.stringify(selected)
@@ -97,7 +97,9 @@ function Result({ questions, userAnswers }: ResultProps) {
                     {index + 1}/{questions.length}
                   </span>
                 </p>
-                <p className="font-medium text-gray-800 text-xs md:text-sm lg:text-[16px] xl:text-[20px]">{correctSentence}</p>
+                <p className="font-medium text-gray-800 text-xs md:text-sm lg:text-[16px] xl:text-[20px]">
+                  {correctSentence}
+                </p>
               </div>
 
               <div className="p-5 space-y-3 bg-gray-50">
@@ -113,7 +115,9 @@ function Result({ questions, userAnswers }: ResultProps) {
                     {answerStatus}
                   </span>
                 </p>
-                <p className="text-gray-800 text-xs md:text-sm lg:text-[16px] xl:text-[20px]">{userSentence}</p>
+                <p className="text-gray-800 text-xs md:text-sm lg:text-[16px] xl:text-[20px]">
+                  {userSentence}
+                </p>
               </div>
             </div>
           );

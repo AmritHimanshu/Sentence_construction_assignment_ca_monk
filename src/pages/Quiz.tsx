@@ -9,7 +9,7 @@ const Quiz: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
   const [timeLeft, setTimeLeft] = useState<number>(30);
-  const [userAnswers, setUserAnswers] = useState<string[][]>([]);
+  const [userAnswers, setUserAnswers] = useState<(string | null)[][]>([]);
   const [quizFinished, setQuizFinished] = useState<boolean>(false);
   const [isQuit, setIsQuit] = useState(false);
 
@@ -45,7 +45,7 @@ const Quiz: React.FC = () => {
     return () => clearInterval(timer);
   }, [timeLeft, currentQuestionIndex, questions.length]);
 
-  const handleNextQuestion = (selectedWords: string[]) => {
+  const handleNextQuestion = (selectedWords: (string | null)[]) => {
     const updatedAnswers = [...userAnswers];
     updatedAnswers[currentQuestionIndex] = selectedWords;
     setUserAnswers(updatedAnswers);
@@ -72,7 +72,10 @@ const Quiz: React.FC = () => {
                   <p>0:{timeLeft}</p>
                 </div>
                 <div>
-                  <button className="border-[1px] border-gray-600 rounded-md font-medium px-5 py-2 cursor-pointer" onClick={()=>setIsQuit(true)}>
+                  <button
+                    className="border-[1px] border-gray-600 rounded-md font-medium px-5 py-2 cursor-pointer"
+                    onClick={() => setIsQuit(true)}
+                  >
                     Quit
                   </button>
                 </div>
@@ -122,7 +125,10 @@ const Quiz: React.FC = () => {
               </button>
               <button
                 className="py-1 px-4 bg-red-100 border border-red-100 rounded-md cursor-pointer"
-                onClick={() => {setQuizFinished(true); setIsQuit(false)}}
+                onClick={() => {
+                  setQuizFinished(true);
+                  setIsQuit(false);
+                }}
               >
                 Yes
               </button>

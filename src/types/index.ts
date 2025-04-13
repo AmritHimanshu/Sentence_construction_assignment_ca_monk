@@ -13,10 +13,10 @@ export interface QuestionData {
 
 export interface QuestionCardProps {
   question: Question;
-  onNextQuestion: (selectedWords: string[]) => void;
+  onNextQuestion: (selectedWords: (string | null)[]) => void;
 }
 
 export interface ResultProps {
   questions: Question[];
-  userAnswers:string[][];
+  userAnswers: (string | null)[][];
 }
