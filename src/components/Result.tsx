@@ -25,7 +25,11 @@ function Result({ questions, userAnswers }: ResultProps) {
     setTotalScore(score);
   }, []);
 
-  const getAnswerStatus = (correct: string[], selected: string[]) => {
+  const getAnswerStatus = (
+    correct: string[],
+    selected: string[] | null
+  ): "Correct" | "Incorrect" | "Not Answered" => {
+    if (!Array.isArray(selected)) return "Not Answered";
     return JSON.stringify(correct) === JSON.stringify(selected)
       ? "Correct"
       : "Incorrect";
@@ -59,8 +63,8 @@ function Result({ questions, userAnswers }: ResultProps) {
         {questions.map((q, index) => {
           const correctAnswer = q.correctAnswer;
           const userAnswer = userAnswers[index];
-          const isCorrect =
-            getAnswerStatus(correctAnswer, userAnswer) === "Correct";
+          const answerStatus = getAnswerStatus(correctAnswer, userAnswer);
+          const isCorrect = answerStatus === "Correct";
 
           let correctIdx = 0;
           let userIdx = 0;
@@ -106,7 +110,7 @@ function Result({ questions, userAnswers }: ResultProps) {
                         : "text-red-600 bg-red-50"
                     }`}
                   >
-                    {isCorrect ? "Correct" : "Incorrect"}
+                    {answerStatus}
                   </span>
                 </p>
                 <p className="text-gray-800">{userSentence}</p>
