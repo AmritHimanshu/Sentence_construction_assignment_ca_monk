@@ -9,7 +9,7 @@ function Instruction() {
       <div className="absolute top-0 text-center w-full p-5 text-sm md:text-[20px] lg:text-[30px] xl:text-lg shadow-lg flex items-center justify-between">
         <div></div>
         <div>Sentence Construction</div>
-        <div>
+        <div className="cursor-poointer">
           <MoreVertIcon />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ResultProps } from "../types";
 import { useEffect, useState } from "react";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
@@ -40,9 +40,9 @@ function Result({ questions, userAnswers }: ResultProps) {
   return (
     <div className="flex flex-col items-center px-3 mt-20">
       <div className="absolute top-0 text-center w-full p-5 text-sm md:text-[20px] lg:text-[30px] xl:text-lg shadow-lg flex items-center justify-between">
-        <div><KeyboardBackspaceIcon /></div>
+        <NavLink to="/"><div className="cursor-poointer"><KeyboardBackspaceIcon /></div></NavLink>
         <div>Sentence Construction</div>
-        <div>
+        <div className="cursor-poointer">
           <MoreVertIcon />
         </div>
       </div>

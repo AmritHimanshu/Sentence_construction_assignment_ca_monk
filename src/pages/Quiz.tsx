@@ -10,7 +10,7 @@ const Quiz: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [timeLeft, setTimeLeft] = useState<number>(30);
   const [userAnswers, setUserAnswers] = useState<(string | null)[][]>([]);
-  const [quizFinished, setQuizFinished] = useState<boolean>(true);
+  const [quizFinished, setQuizFinished] = useState<boolean>(false);
   const [isQuit, setIsQuit] = useState(false);
 
   useEffect(() => {
