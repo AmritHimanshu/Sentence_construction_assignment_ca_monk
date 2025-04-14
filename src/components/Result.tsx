@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { ResultProps } from "../types";
 import { useEffect, useState } from "react";
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 function Result({ questions, userAnswers }: ResultProps) {
   const navigate = useNavigate();
@@ -36,7 +38,14 @@ function Result({ questions, userAnswers }: ResultProps) {
   };
 
   return (
-    <div className="flex flex-col items-center px-3">
+    <div className="flex flex-col items-center px-3 mt-20">
+      <div className="absolute top-0 text-center w-full p-5 text-sm md:text-[20px] lg:text-[30px] xl:text-lg shadow-lg flex items-center justify-between">
+        <div><KeyboardBackspaceIcon /></div>
+        <div>Sentence Construction</div>
+        <div>
+          <MoreVertIcon />
+        </div>
+      </div>
       <div className="text-center mb-8">
         <div className="w-32 h-32 rounded-full border-8 border-green-500 flex items-center justify-center mx-auto">
           <span className="text-4xl font-bold text-green-600">

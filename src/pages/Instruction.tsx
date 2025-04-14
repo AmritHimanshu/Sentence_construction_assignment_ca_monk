@@ -1,12 +1,17 @@
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import PaidIcon from "@mui/icons-material/Paid";
 import { NavLink } from "react-router-dom";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 function Instruction() {
   return (
     <div className="relative border-2 w-full min-h-[100vh] flex items-center justify-center px-3">
-      <div className="absolute top-0 text-center w-full p-5 text-sm md:text-[20px] lg:text-[30px] xl:text-lg shadow-lg">
-        Sentence Construction
+      <div className="absolute top-0 text-center w-full p-5 text-sm md:text-[20px] lg:text-[30px] xl:text-lg shadow-lg flex items-center justify-between">
+        <div></div>
+        <div>Sentence Construction</div>
+        <div>
+          <MoreVertIcon />
+        </div>
       </div>
 
       <div className="text-center w-[700px] space-y-7">
