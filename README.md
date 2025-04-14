@@ -1,54 +1,79 @@
-# React + TypeScript + Vite
+# 🧠 Sentence Construction Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a sentence construction quiz web app built using **Vite + React + Tailwind CSS**. It presents users with fill-in-the-blank style questions, where they need to select the correct sequence of words to form a meaningful sentence.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the deployed app here:  
+🔗 [https://sentence-construction-assignment-ca-monk.vercel.app/](https://sentence-construction-assignment-ca-monk.vercel.app/)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- ⚛️ React (with Vite)
+- 🎨 Tailwind CSS
+- 🧠 TypeScript (optional usage)
+- 📁 Modular File Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Folder Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Directory structure:
+└── amrithimanshu-sentence_construction_assignment_ca_monk/
+    ├── README.md
+    ├── data.json
+    ├── eslint.config.js
+    ├── index.html
+    ├── package.json
+    ├── tsconfig.app.json
+    ├── tsconfig.json
+    ├── tsconfig.node.json
+    ├── vite.config.ts
+    ├── api/
+    │   └── data.js
+    ├── public/
+    └── src/
+        ├── App.css
+        ├── App.tsx
+        ├── index.css
+        ├── main.tsx
+        ├── vite-env.d.ts
+        ├── assets/
+        ├── components/
+        │   ├── QuestionCard.tsx
+        │   └── Result.tsx
+        ├── pages/
+        │   ├── Instruction.tsx
+        │   ├── Quiz.tsx
+        │   └── Start.tsx
+        ├── types/
+        │   └── index.ts
+        └── utils/
+            └── api.ts
+
+
+
+## ✨ Features
+
+- ⏳ 30-second timer per question
+- 🔁 Auto-navigation to next question on timeout
+- ✅ Dynamic word selection & answer validation
+- 📊 Final score/result screen
+- 🚫 Quit quiz confirmation popup
+- 📱 Responsive UI
+
+## 📄 Data Source
+
+Questions are fetched from a local `data.json` file using a custom API route (`/api`).
+
+## 🛠️ Running Locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-username/sentence-construction-assignment.git
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the dev server
+npm run dev
