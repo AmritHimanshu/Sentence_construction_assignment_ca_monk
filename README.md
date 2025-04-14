@@ -17,7 +17,7 @@ Check out the deployed app here:
 
 ## 📁 Folder Structure
 
-
+```bash
 Directory structure:
 └── amrithimanshu-sentence_construction_assignment_ca_monk/
     ├── README.md
@@ -50,7 +50,7 @@ Directory structure:
         │   └── index.ts
         └── utils/
             └── api.ts
-
+```
 
 
 ## ✨ Features
