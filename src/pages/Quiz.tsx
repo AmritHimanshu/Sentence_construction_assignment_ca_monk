@@ -13,6 +13,7 @@ const Quiz: React.FC = () => {
   const [quizFinished, setQuizFinished] = useState<boolean>(false);
   const [isQuit, setIsQuit] = useState(false);
 
+  // Fetching questions
   useEffect(() => {
     const getData = async () => {
       try {
@@ -28,6 +29,7 @@ const Quiz: React.FC = () => {
     getData();
   }, []);
 
+  // Timer logic
   useEffect(() => {
     if (timeLeft === 0) {
       if (currentQuestionIndex < questions.length - 1) {
@@ -45,6 +47,7 @@ const Quiz: React.FC = () => {
     return () => clearInterval(timer);
   }, [timeLeft, currentQuestionIndex, questions.length]);
 
+  // Moving to next question logic
   const handleNextQuestion = (selectedWords: (string | null)[]) => {
     const updatedAnswers = [...userAnswers];
     updatedAnswers[currentQuestionIndex] = selectedWords;
@@ -55,6 +58,7 @@ const Quiz: React.FC = () => {
     } else showResult();
   };
 
+  // For the result page
   const showResult = () => {
     setQuizFinished(true);
   };

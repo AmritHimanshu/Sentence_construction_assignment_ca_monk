@@ -9,6 +9,7 @@ function Result({ questions, userAnswers }: ResultProps) {
 
   const [totalScore, setTotalScore] = useState(0);
 
+  // Calculating the total score of the user
   const calculateScore = () => {
     let score = 0;
     questions.forEach((question, index) => {
@@ -27,6 +28,7 @@ function Result({ questions, userAnswers }: ResultProps) {
     setTotalScore(score);
   }, []);
 
+  // Getting status of each question
   const getAnswerStatus = (
     correct: string[],
     selected: (string | null)[] | null
@@ -49,7 +51,7 @@ function Result({ questions, userAnswers }: ResultProps) {
       <div className="text-center mb-8">
         <div className="w-32 h-32 rounded-full border-8 border-green-500 flex items-center justify-center mx-auto">
           <span className="text-4xl font-bold text-green-600">
-            {Math.round((totalScore / questions.length) * 100)}
+            {Math.round((totalScore / questions.length) * 100)}%
           </span>
         </div>
         <h2 className="text-xl font-semibold mt-2">Overall Score</h2>
@@ -78,6 +80,7 @@ function Result({ questions, userAnswers }: ResultProps) {
           let correctIdx = 0;
           let userIdx = 0;
 
+          // Forming sentences
           const correctSentence = q.question.replace(
             /_____________/g,
             () => correctAnswer[correctIdx++] || "______"
